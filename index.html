@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A tribute to Nelson Mandela, his life, achievements and legacy.">
+    <title>Nelson Mandela | A Tribute</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #24312b;
+            background-color: #f5f7f5;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        header {
+            background: linear-gradient(120deg, #103526, #246747);
+            color: white;
+        }
+
+        .topline {
+            max-width: 1120px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brand {
+            color: #e5c47c;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero {
+            max-width: 1120px;
+            margin: auto;
+            padding: 60px 25px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 65px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            color: #e5c47c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #e5e5e5;
+            margin-bottom: 25px;
+        }
+
+        .hero a {
+            display: inline-block;
+            background: #d6a84f;
+            color: #103526;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero a:hover {
+            background: white;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 180px 180px 20px 20px;
+            border: 6px solid rgba(255,255,255,0.2);
+        }
+
+        .nav-wrap {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        nav {
+            max-width: 1120px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #174b37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d6a84f;
+        }
+
+        main {
+            max-width: 1120px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 55px;
+        }
+
+        .intro h2,
+        section h2 {
+            color: #174b37;
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #64736b;
+        }
+
+        .section-heading {
+            margin-bottom: 25px;
+        }
+
+        .section-heading span {
+            color: #a17a32;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        section {
+            margin-bottom: 55px;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+        }
+
+        .story-text {
+            padding: 25px;
+        }
+
+        .story-text h3 {
+            color: #174b37;
+            margin-bottom: 10px;
+        }
+
+        .story-text p {
+            color: #64736b;
+        }
+
+        .timeline {
+            border-left: 3px solid #c6d9cb;
+            margin-left: 10px;
+            padding-left: 25px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            background: #d6a84f;
+            border-radius: 50%;
+        }
+
+        .timeline-item span {
+            color: #a17a32;
+            font-weight: bold;
+        }
+
+        .timeline-item h3 {
+            color: #174b37;
+        }
+
+        .achievement-panel {
+            background: #174b37;
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 30px;
+        }
+
+        .achievement-panel h2 {
+            color: white;
+        }
+
+        .achievement-panel ul {
+            list-style: none;
+        }
+
+        .achievement-panel li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+        }
+
+        .achievement-panel li::before {
+            content: "✦ ";
+            color: #d6a84f;
+        }
+
+        .quote-section {
+            background: #e8f2ec;
+            padding: 45px 25px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        blockquote {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            color: #174b37;
+        }
+
+        .quote-credit {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #64736b;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery figure {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery figure:hover img {
+            transform: scale(1.05);
+        }
+
+        figcaption {
+            padding: 12px;
+            color: #174b37;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .reflection {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .reflection p {
+            margin-bottom: 15px;
+            color: #64736b;
+        }
+
+        aside {
+            margin-top: 25px;
+            background: #fff8e9;
+            padding: 25px;
+            border-left: 5px solid #d6a84f;
+            border-radius: 10px;
+        }
+
+        aside h3 {
+            color: #174b37;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #103526;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer a {
+            color: #e5c47c;
+            text-decoration: none;
+        }
+
+        @media (max-width: 760px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .achievement-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .topline {
+                flex-direction: column;
+            }
+
+            nav {
+                gap: 12px 18px;
+            }
+
+            .story-grid,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="topline">
+            <p class="brand">A TRIBUTE TO A GREAT LEADER</p>
+            <p>1918 - 2013</p>
+        </div>
+
+        <div class="hero">
+            <div>
+                <p class="subtitle">A life of courage, freedom and equality</p>
+                <h1>Nelson<br>Mandela</h1>
+
+                <p>
+                    A leader whose determination helped change South Africa
+                    and whose commitment to justice, reconciliation and human
+                    dignity continues to inspire people around the world.
+                </p>
+
+                <a href="#biography">Explore His Story</a>
+            </div>
+
+            <img src="https://res.cloudinary.com/drffmmfkm/image/upload/v1793376803/Nelson_Mandela_1st_Black_South_Africans_president_u7wghj.webp" alt="Portrait of Nelson Mandela">
+        </div>
+    </header>
+
+    <div class="nav-wrap">
+        <nav>
+            <a href="#biography">Biography</a>
+            <a href="#journey">Life Journey</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#tribute">My Tribute</a>
+        </nav>
+    </div>
+
+    <main>
+
+        <div class="intro">
+            <h2>A Symbol of Hope and Perseverance</h2>
+
+            <p>
+                Nelson Rolihlahla Mandela devoted much of his life to the
+                fight against apartheid. His journey from political prisoner
+                to South Africa's first Black president represents the power
+                of courage, persistence and reconciliation.
+            </p>
+        </div>
+
+        <section id="biography">
+            <div class="section-heading">
+                <span>His beginnings</span>
+                <h2>Biography</h2>
+            </div>
+
+            <div class="story-grid">
+
+                <article class="story-card">
+                    <img src="https://res.cloudinary.com/drffmmfkm/image/upload/v1793377566/nelson-mandela-194_2467778c_dro9jn.jpg"
+                         alt="Nelson Mandela during his younger years">
+
+                    <div class="story-text">
+                        <h3>Early Life and Education</h3>
+
+                        <p>
+                            Nelson Rolihlahla Mandela was born on 18 July
+                            1918 in Mvezo, South Africa. He studied law and
+                            became increasingly involved in the struggle
+                            against racial discrimination.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <img src="https://res.cloudinary.com/drffmmfkm/image/upload/v1793377643/lg180049_d7qvey.jpg"
+                         alt="Nelson Mandela during the freedom struggle">
+
+                    <div class="story-text">
+                        <h3>The Struggle for Freedom</h3>
+
+                        <p>
+                            Mandela became a leading figure in the African
+                            National Congress. His opposition to apartheid
+                            led to his imprisonment for 27 years. He remained
+                            committed to the goal of a democratic South Africa.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="journey">
+            <div class="section-heading">
+                <span>A remarkable journey</span>
+                <h2>Key Moments in His Life</h2>
+            </div>
+
+            <div class="timeline">
+
+                <article class="timeline-item">
+                    <span>1918</span>
+                    <h3>Born in Mvezo</h3>
+                    <p>
+                        Nelson Mandela was born in the Eastern Cape region
+                        of South Africa.
+                    </p>
+                </article>
+
+                <article class="timeline-item">
+                    <span>1944</span>
+                    <h3>Joined the ANC Youth League</h3>
+                    <p>
+                        He helped establish the ANC Youth League and became
+                        more active in the campaign for equality.
+                    </p>
+                </article>
+
+                <article class="timeline-item">
+                    <span>1964</span>
+                    <h3>Sentenced to Life Imprisonment</h3>
+                    <p>
+                        Mandela was sentenced to life imprisonment during
+                        the Rivonia Trial.
+                    </p>
+                </article>
+
+                <article class="timeline-item">
+                    <span>1990</span>
+                    <h3>Released from Prison</h3>
+                    <p>
+                        After 27 years in prison, Mandela was released and
+                        continued negotiations to end apartheid.
+                    </p>
+                </article>
+
+                <article class="timeline-item">
+                    <span>1993 - 1994</span>
+                    <h3>Nobel Peace Prize and Presidency</h3>
+                    <p>
+                        He shared the 1993 Nobel Peace Prize with F. W. de Klerk
+                        and became president in 1994.
+                    </p>
+                </article>
+
+                <article class="timeline-item">
+                    <span>2013</span>
+                    <h3>Remembering His Legacy</h3>
+                    <p>
+                        Mandela passed away on 5 December 2013, leaving a
+                        lasting legacy of service and reconciliation.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="achievements">
+            <div class="achievement-panel">
+
+                <div>
+                    <h2>Achievements and Legacy</h2>
+
+                    <p>
+                        Mandela's influence reached far beyond political
+                        office. His work helped advance democracy, human
+                        rights and national reconciliation.
+                    </p>
+                </div>
+
+                <ul>
+                    <li>Helped lead the movement against apartheid.</li>
+                    <li>Became South Africa's first Black president in 1994.</li>
+                    <li>Received the Nobel Peace Prize in 1993.</li>
+                    <li>Promoted reconciliation and peaceful democratic change.</li>
+                    <li>Inspired global efforts for justice and human dignity.</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <blockquote>
+                "It always seems impossible until it's done."
+            </blockquote>
+
+            <p class="quote-credit">— Nelson Mandela</p>
+        </section>
+
+        <section id="gallery">
+            <div class="section-heading">
+                <span>Moments remembered</span>
+                <h2>Photo Gallery</h2>
+
+                <p>
+                    A collection of photographs showing different moments
+                    in Nelson Mandela's life and leadership.
+                </p>
+            </div>
+
+            <div class="gallery">
+
+                <figure>
+                    <img src="https://res.cloudinary.com/drffmmfkm/image/upload/v1793377740/9131421765_62c6658b32_b-wpv_1020x800_center_center_xvlfrj.jpg"
+                         alt="Nelson Mandela addressing an audience">
+                    <figcaption>A Voice for Freedom</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://res.cloudinary.com/drffmmfkm/image/upload/v1793377867/gettyimages-150342100_custom-03b1148728b9d378d7c9cf901b159c0c0a38be0c_vjvju5.jpg"
+                         alt="Nelson Mandela during his presidency">
+                    <figcaption>Leadership and Service</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://res.cloudinary.com/drffmmfkm/image/upload/v1793376804/nelson-mandela_pweakr.jpg"
+                         alt="Nelson Mandela meeting members of the public">
+                    <figcaption>A Legacy of Hope</figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <section id="tribute">
+            <div class="section-heading">
+                <span>My personal reflection</span>
+                <h2>Why I Admire Nelson Mandela</h2>
+            </div>
+
+            <div class="reflection">
+                <p>
+                    I admire Nelson Mandela because he showed courage,
+                    patience and determination even during the most difficult
+                    moments of his life. Although he spent 27 years in prison,
+                    he did not abandon his belief in freedom and equality.
+                </p>
+
+                <p>
+                    What inspires me most is his ability to promote forgiveness
+                    and reconciliation instead of revenge. He demonstrated
+                    that leadership is not simply about holding power, but
+                    about serving people and working for the good of society.
+                </p>
+
+                <p>
+                    His life reminds me to respect others, stand against
+                    injustice and remain committed to doing what is right.
+                    Nelson Mandela's legacy teaches us that one person's
+                    courage and determination can make a meaningful
+                    difference in the world.
+                </p>
+            </div>
+
+            <aside>
+                <h3>Did You Know?</h3>
+
+                <p>
+                    Nelson Mandela International Day is observed on
+                    18 July each year. The day encourages people to give
+                    their time to helping others and making a positive
+                    difference in their communities.
+                </p>
+            </aside>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>A Tribute to Nelson Mandela</strong></p>
+        <p>Created as an HTML and CSS learning project.</p>
+
+        <p>
+            Learn more from the
+            <a href="https://www.nelsonmandela.org/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Nelson Mandela Foundation
+            </a>.
+        </p>
+
+        <p>&copy; 2026 Tribute Webpage</p>
+    </footer>
+
+</body>
+</html>
